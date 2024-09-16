@@ -1,9 +1,10 @@
 import React from "react";
+import "./Footer.css"
 
 function Footer () {
     return(
         <footer>
-            <p>Fermin Pacheco, Tomas Weskamp y Shawn Zir</p>
+            <p className="title-font">Fermin Pacheco Tomas Weskamp Shawn Zir</p>
         </footer>
     )
 }
