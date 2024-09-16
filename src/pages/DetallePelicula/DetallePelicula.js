@@ -9,15 +9,7 @@ export default class DetallePelicula extends Component {
   }
 
   componentDidMount() {
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${process.env.REACT_APP_TOKEN_API}`
-      }
-    };
-    // Realizar el fetch a la API
-    fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`, options)
+    fetch(`https://api.themoviedb.org/3/movie/533535?language=en-US`)
       .then((response) => {
         return response.json();
       })
