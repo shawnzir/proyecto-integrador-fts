@@ -7,8 +7,8 @@ const NotFound = () => {
   return (
     <React.Fragment>
       <Header/>
-        <h1>404 - Página no encontrada</h1>
-        <Link to="/" className='link'>Volver al inicio</Link>
+        <h1 className='title-font'>404 - Página no encontrada</h1>
+        <Link to="/" className='link font'>Volver al inicio</Link>
     </React.Fragment>
   )
 }

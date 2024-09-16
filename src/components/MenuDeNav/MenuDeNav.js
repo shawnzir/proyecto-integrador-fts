@@ -6,7 +6,7 @@ function Menu(props) {
             <div className="logo">
                 <img src="./img/fts-logo.png" alt="logo" className="logo-img"/>
             </div>
-            <ul className="menu">
+            <ul className="menu title-font">
                 <li> <a href="/"> {props.home} </a> </li>
                 <li> <a href="/favoritos"> {props.favoritos} </a> </li>
                 <li> <a href="/peliculas"> {props.vertodas} </a> </li>

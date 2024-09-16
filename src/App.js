@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import Resultados from "./pages/Resultados/Resultados";
 import DetallePelicula from "./pages/DetallePelicula/DetallePelicula"
 import Peliculas from "./pages/Peliculas/Peliculas";
+import "./App.css"
 
 function App() {
   return (
