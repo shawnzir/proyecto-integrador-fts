@@ -19,6 +19,7 @@ header {
     justify-content: center;
     padding: 0px;
     margin: 0px;
+    font-size: 25px;
 }
 
 .menu li {
@@ -37,9 +38,11 @@ header {
 
 .logo {
     display: flex;
-    margin: 10px;
+    margin: 20px;
+    padding: 10px;
 }
 
 .logo-img {
-    max-width: 100px;
+    max-width: 150px;
+    max-height: 50px;
 }
