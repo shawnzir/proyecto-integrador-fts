@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Pelicula() {
-  return (
-    <div>
-      
-    </div>
-  )
+export default class DetallePelicula extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
