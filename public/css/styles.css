@@ -15,11 +15,11 @@ a {
 body {
     font-family: Nunito;
     margin: 0;
-    background-color: #eee;
+    background-color: white;
     padding-bottom: 150px;
 }
 
-/* Navigation */
+/* Navigation
 
 nav{
     display: flex;
@@ -41,12 +41,12 @@ nav ul {
 nav ul li{
     display: flex;
     justify-content: space-around;
-}
+} */
 
 
 /* footer */
 footer {
-    background-color: #dedede;
+    background-color: whitesmoke;
     padding: 40px 0;
     color: #666;
     position: fixed;

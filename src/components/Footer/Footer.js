@@ -3,9 +3,7 @@ import React from "react";
 function Footer () {
     return(
         <footer>
-            <p>Fermin Pacheco</p>
-            <p>Tomas Weskamp</p>
-            <p>Shawn Zir</p>
+            <p>Fermin Pacheco, Tomas Weskamp y Shawn Zir</p>
         </footer>
     )
 }
