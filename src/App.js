@@ -1,14 +1,11 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-
+import { Routes, Route } from "react-router-dom"
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <h1>Hola! Este es nuestro proyecto</h1>
-      <Footer/>
-    </div>
+    <Routes>
+      <Route exact={true} path="/" element={<Home />} />
+    </Routes>
   );
 }
 
