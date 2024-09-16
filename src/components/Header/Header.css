@@ -1,0 +1,40 @@
+/* Header.css */
+  
+header {
+    display: flex;
+    background-color: blueviolet; 
+    padding: 10px 0;
+    color: #f0dcf0; /* Color del texto blanco */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #e5e5e5; /* Gris claro para los enlaces */
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: white; /* Azul para los enlaces en hover */
+}
+
+.logo {
+    display: flex;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.logo-img {
+    max-width: 150px;
+}

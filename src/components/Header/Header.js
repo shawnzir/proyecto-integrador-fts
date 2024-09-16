@@ -1,13 +1,12 @@
 import React from "react";
+import MenuDeNav from "../MenuDeNav/MenuDeNav"
+import "./Header.css"
 
 function Header() {
-    return(
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Ver todas</li>
-            </ul>
-        </nav>
+    return (
+        <header>
+            <MenuDeNav home="Home" favoritos="Favoritos" vertodas="Ver todas"/>
+        </header>
     )
 }
 
