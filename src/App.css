@@ -13,4 +13,25 @@
   font-weight: 325;
   font-style: normal;
 }
+
+*{
+  box-sizing: border-box;
+}
+ul,ol {
+  padding: 0;
+}
+li {
+  list-style-type:none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
+  background-size: 400% 400%;
+}
   

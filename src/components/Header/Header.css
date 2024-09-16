@@ -1,9 +1,9 @@
 header {
-    display: flex;
-    flex-direction: row;
-    background-color: black; 
-    padding: 10px 0;
-    color: white; 
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-nav {
