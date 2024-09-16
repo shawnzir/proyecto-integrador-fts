@@ -1,18 +1,24 @@
-/* Header.css */
-  
 header {
     display: flex;
-    background-color: blueviolet; 
+    flex-direction: row;
+    background-color: black; 
     padding: 10px 0;
-    color: #f0dcf0; /* Color del texto blanco */
+    color: white; 
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 .menu li {
@@ -21,20 +27,19 @@ header {
 
 .menu a {
     text-decoration: none;
-    color: #e5e5e5; /* Gris claro para los enlaces */
+    color: #e5e5e5; 
     font-weight: bold;
 }
 
 .menu a:hover {
-    color: white; /* Azul para los enlaces en hover */
+    color: white; 
 }
 
 .logo {
     display: flex;
-    text-align: right;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .logo-img {
-    max-width: 150px;
+    max-width: 100px;
 }
