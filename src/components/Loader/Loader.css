@@ -1,0 +1,15 @@
+.loader {
+    border: 8px solid white;
+    border-radius: 50%;
+    border-top: 8px solid white;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
