@@ -1,18 +1,24 @@
-import React from "react";
+import { Component } from "react";
 
-function Menu(props) {
-    return (
-        <nav className="header-nav">
-            <div className="logo">
-                <img src="./img/fts-logo.png" alt="logo" className="logo-img"/>
-            </div>
-            <ul className="menu">
-                <li> <a href="/"> {props.home} </a> </li>
-                <li> <a href="/favoritos"> {props.favoritos} </a> </li>
-                <li> <a href="/peliculas"> {props.vertodas} </a> </li>
-            </ul>
-        </nav>
-    )
+class Menu extends Component {
+
+    render() {
+        return (
+            <nav className="header-nav">
+
+                <div className="logo">
+                    <img src="./img/fts-logo.png" alt="logo" className="logo-img" />
+                </div>
+
+                <ul className="menu">
+                    <li> <a href="/"> {this.props.home} </a> </li>
+                    <li> <a href="/favoritos"> {this.props.favoritos} </a> </li>
+                    <li> <a href="/peliculas"> {this.props.vertodas} </a> </li>
+                </ul>
+
+            </nav>
+        )
+    }
 };
 
 export default Menu;
