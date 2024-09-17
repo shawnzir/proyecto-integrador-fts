@@ -1,0 +1,43 @@
+.favoritos{
+  padding: 2em 3em;
+}
+.favoritos h1{
+  color: white;
+  font-size: 35px;
+}
+.favoritos h2{
+  color: white;
+  font-size: 20px;
+  border-bottom: 3px solid white;
+  display: inline-block;
+}
+.favoritos .wrapper{
+  display: flex;
+  flex: 0 0 calc(20%-15px);
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  height: fit-content;
+}
+.favoritos .wrapper .movie-card{
+  width: calc(20% - 15px);
+}
+.favoritos .wrapper .movie-card:hover{
+  outline: white outset 2px;
+  outline-offset: 2px;
+}
+.favoritos .wrapper .movie-card a{
+  display: block;
+}
+.favoritos .wrapper .movie-card a img{
+  width: 100%;
+}
+@media (max-width: 420px){
+  .favoritos{
+    padding: 0em 1.5em 1.5em 1.5em;
+  }
+  .favoritos .wrapper .movie-card{
+    width: calc(50% - 15px);
+  }
+}

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import Home from "./pages/Home/Home";
 import Favoritos from "./pages/Favoritos/Favoritos";
 import NotFound from "./pages/NotFound/NotFound";
@@ -9,14 +9,14 @@ import "./App.css"
 
 function App() {
   return (
-    <Routes>
-      <Route exact={true} path="/" element={<Home/>} />
-      <Route path="/favoritos" element={<Favoritos/>} />
-      <Route path="*" element={<NotFound/>} />
-      <Route path="/resultados" element={<Resultados/>} />
-      <Route path="/pelicula/:id" element={<DetallePelicula/>} />
-      <Route path="/peliculas" element={<Peliculas/>} />
-    </Routes>
+    <Switch>
+      <Route exact={true} path="/" component={Home} />
+      <Route path="/favoritos" component={Favoritos} />
+      <Route path="/resultados" component={Resultados} />
+      <Route path="/pelicula/:id" component={DetallePelicula} />
+      <Route path="/peliculas" component={Peliculas} />
+      <Route path="*" component={NotFound} />
+    </Switch>
   );
 }
 

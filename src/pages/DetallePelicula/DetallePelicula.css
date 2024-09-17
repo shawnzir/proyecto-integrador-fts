@@ -1,0 +1,110 @@
+.main-banner-p{
+  height: 100vh;
+}
+.main-banner{
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px -300px 200px rgba(0, 0, 0, 0.9);
+}
+.main-banner .wrapper{
+  width: fit-content;
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+}
+.main-banner h1{
+  margin: 0px;
+  display: block;
+  color: white;
+  font-size: 5em;
+}
+.main-banner .wrapper .info{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.main-banner .wrapper .info p{
+  margin-right: 15px;
+  color: white;
+}
+.main-banner .wrapper .description{
+  color: rgb(224, 224, 224);
+  width: 60%;
+}
+.main-banner .wrapper .genres{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.main-banner .wrapper .genres p{
+  padding: 7px 12px;
+  background-color: white;
+  color: black;
+  margin-right: 15px;
+  border-radius: 10000px;
+  font-weight: 500;
+}
+.main-banner .wrapper .watch{
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8em 6em;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+.main-banner .wrapper .fav{
+  padding: 0.7em 2em;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: 2em;
+  background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
+  background-size: 400% 200%;
+}
+@media (max-width: 420px){
+  .main-banner-p{
+    height: 120vh;
+  }
+  .main-banner{
+    background-position: center;
+  }
+  .main-banner h1{
+    font-size: 2em;
+  }
+  .main-banner .wrapper{
+    left: 0px;
+    padding: 0em 1em;
+  }
+  .main-banner .wrapper .info p{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .main-banner .wrapper .description{
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .main-banner .wrapper .genres{
+    margin-bottom: 0.4em;
+  }
+  .main-banner .wrapper .genres p{
+    font-size: 14px;
+  }
+  .main-banner .wrapper .watch{
+    padding: 0.7em 2em;
+    font-size: 16px;
+    width: 100%;
+  }
+  .main-banner .wrapper .fav{
+    font-size: 14px;
+  }
+}

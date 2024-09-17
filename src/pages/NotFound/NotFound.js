@@ -6,10 +6,10 @@ import "./NotFound.css"
 
 const NotFound = () => {
   return (
-    <React.Fragment>
+    <React.Fragment className="not-found">
       <Header/>
         <h1 className='title-font'>404 - Página no encontrada</h1>
-        <Link to="/" className='link font'>Volver al inicio</Link>
+        <Link to="/" className='font'>Volver al inicio</Link>
       <Footer/>
     </React.Fragment>
   )
