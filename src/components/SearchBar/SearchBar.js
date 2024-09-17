@@ -1,36 +1,35 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            valorBusqueda: "" // El usuario no escribió
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      valorBusqueda: "" // Valor que escriba el usuario en el buscador
+    };
+  }
 
-    evitarSubmit = (event) => {
-        event.preventDefault();
+  evitarSubmit = (event) => {
+    event.preventDefault();
+    this.props.onSearch(this.state.valorBusqueda);
+  };
 
-    }
+  controlarCambios = (event) => {
+    this.setState({ valorBusqueda: event.target.value });
+  };
 
-    controlarCambios = (event) => {
-        this.setState(
-            {
-                valorBusqueda: event.target.value
-            }
-        );
-    }
-
-    render() {
-        {/* Formulario de búsqueda */ }
-
-        <form onSubmit={(event) => this.evitarSubmit(event)}>
-            <label> Buscar: </label>
-            <input type="text" onChange={(event) => this.controlarCambios(event)} value={this.state.valorBusqueda} />
-        </form>
-        
-        {/* Hasta acá */ }
-    }
+  render() {
+    return (
+      <form className="form-home" onSubmit={this.evitarSubmit}>
+        <input
+          type="text"
+          onChange={this.controlarCambios}
+          placeholder="Buscar"
+          value={this.state.valorBusqueda}
+        />
+        <button type="submit">Enter</button>
+      </form>
+    );
+  }
 }
 
 export default SearchBar;

@@ -34,3 +34,8 @@ body {
   background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
   background-size: 400% 400%;
 }
+
+.form-home {
+  display: flex;
+  justify-content: center;
+}
