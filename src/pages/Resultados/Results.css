@@ -1,0 +1,41 @@
+.results-page {
+    padding: 20px;
+  }
+  
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px; 
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .results li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .results img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .results img:hover {
+    transform: scale(1.05); 
+  }
+  
+  .title-font {
+    font-size: 20px;
+    margin: 10px 0 0 0;
+    color: white;
+    text-align: center;
+  }
+  
+  .results li {
+    margin-bottom: 20px;
+  }
+  

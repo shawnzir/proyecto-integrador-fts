@@ -1,63 +1,57 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import Peliculas from "../../components/Peliculas/Peliculas";
 import Loader from '../../components/Loader/Loader';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom/cjs/react-router-dom";
+import './Results.css';
 
 class Resultados extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      valorBusqueda: this.props.match.params.valorBusqueda,
-      results: [],
+      peliculas: [],
       loading: true,
-    }
+    };
   }
 
-  componentDidMount() {
-    this.fetchMovies(); 
-  }
-
-  fetchMovies = () => {
-    const { valorBusqueda } = this.state;
-
-    if (valorBusqueda) {
-      this.setState({ loading: true })
-      SearchBar(valorBusqueda)
-        .then((results) => {
-          this.setState({ results, loading: false })
-        })
-        .catch((err) => {
-          this.setState({ loading: false })
-        })
-    }
+  handleResults = (peliculas) => {
+    this.setState({ peliculas, loading: false });
   };
 
   render() {
-    const { results, loading } = this.state;
+    const { peliculas, loading} = this.state;
+    const { valorBusqueda } = this.props.match.params;
 
     return (
       <div>
-        {loading ? (
-          <Loader/>
-        ) : (
-          <div>
-            {results.length > 0 ? (
-              <ul>
-                {results.map((movie) => (
-                  <li key={movie.id}>
-                    <h2 className='title-font'>{movie.title}</h2>
-                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title}/>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No se encontraron resultados.</p>
-            )}
-          </div>
-        )}
+        <Header />
+        <Peliculas
+          terminoBusqueda={valorBusqueda}
+          onResults={this.handleResults}
+          onError={this.handleError}
+        />
+
+        <div className="results-page">
+          {loading ? (
+            <Loader />
+          ) : peliculas.length > 0 ? (
+            <ul className="results">
+              {peliculas.map((movie) => (
+                <li key={movie.id}>
+                  <Link to={`/pelicula/${movie.id}`}>
+                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+                    <h3 className="title-font">{movie.title}</h3>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No se encontraron resultados</p>
+          )}
+        </div>
       </div>
     );
   }
-
 }
 
 export default Resultados;
