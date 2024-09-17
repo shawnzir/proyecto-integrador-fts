@@ -4,7 +4,7 @@ function Menu(props) {
     return (
         <nav className="header-nav">
             <div className="logo">
-                <img src="./img/fts-logo.png" alt="logo" className="logo-img"/>
+                <img src="../img/fts-logo.png" alt="logo" className="logo-img"/>
             </div>
             <ul className="menu title-font">
                 <li> <a href="/"> {props.home} </a> </li>
