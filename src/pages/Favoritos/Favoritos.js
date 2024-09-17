@@ -10,8 +10,7 @@ export default function Favoritos() {
     <div>
       <Header />
       <div className='favoritos'>
-        <h1>Favoritos</h1>
-        <h2>Mi Lista</h2>
+        <h1 className='title-font'>Mi lista</h1>
         <div className='wrapper'>
           {favoritos?
             favoritos.map(item=>(

@@ -28,12 +28,12 @@ header {
 
 .menu a {
     text-decoration: none;
-    color: #e5e5e5; 
+    color: white; 
     font-weight: bold;
 }
 
 .menu a:hover {
-    color: white; 
+    color: lightgray; 
 }
 
 .logo {
