@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 class SearchBar extends Component {
   constructor(props) {
@@ -8,25 +9,28 @@ class SearchBar extends Component {
     };
   }
 
-  evitarSubmit = (event) => {
-    event.preventDefault();
-    this.props.onSearch(this.state.valorBusqueda);
-  };
-
   controlarCambios = (event) => {
     this.setState({ valorBusqueda: event.target.value });
   };
 
+  onSubmit = () => {
+    const { valorBusqueda } = this.state;
+    this.props.onSearch(valorBusqueda);
+  };
+
   render() {
+    const { valorBusqueda } = this.state;
     return (
-      <form className="form-home" onSubmit={this.evitarSubmit}>
+      <form className="form-home" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           onChange={this.controlarCambios}
           placeholder="Buscar"
-          value={this.state.valorBusqueda}
+          value={valorBusqueda}
         />
-        <button type="submit">Enter</button>
+        <Link to={`/resultados/${valorBusqueda}`}>
+          <button type="submit" onClick={this.onSubmit}>Enter</button>
+        </Link>
       </form>
     );
   }
