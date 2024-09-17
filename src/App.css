@@ -3,14 +3,14 @@
 
 .title-font {
     font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
+    font-weight: 275;
     font-style: normal;
 }
 
 .font {
-  font-family: "Oswald", system-ui;
+  font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 325;
+  font-weight: 250;
   font-style: normal;
 }
 

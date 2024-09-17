@@ -27,7 +27,7 @@
 }
 .main-banner .wrapper .info p{
   margin-right: 15px;
-  color: white;
+  color: rgb(224, 224, 224);
 }
 .main-banner .wrapper .description{
   color: rgb(224, 224, 224);
@@ -45,30 +45,35 @@
   color: black;
   margin-right: 15px;
   border-radius: 10000px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .main-banner .wrapper .watch{
-  background-color: white;
+  background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
+  background-size: 400% 200%;
   border: none;
   border-radius: 10px;
   padding: 0.8em 6em;
-  color: black;
+  color: white;
   font-size: 20px;
   font-weight: 600;
 }
-.main-banner .wrapper .fav{
-  padding: 0.7em 2em;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  text-transform: capitalize;
-  cursor: pointer;
-  margin-bottom: 2em;
-  background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
-  background-size: 400% 200%;
+
+.main-banner .wrapper .watch:hover {
+  color: lightgray;
 }
+
+.main-banner .wrapper .fav{
+  background: none;
+  border: none; 
+  cursor: pointer; 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px; 
+  vertical-align: middle; 
+  font-size: 50px;
+}
+
 @media (max-width: 420px){
   .main-banner-p{
     height: 120vh;
