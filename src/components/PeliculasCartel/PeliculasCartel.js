@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
+import Loader from "../Loader/Loader";
 
 class PeliculasCartel extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class PeliculasCartel extends Component {
       <React.Fragment>
         <h2>Películas en cartel</h2>
         {loading ? (
-          <p>Cargando...</p>
+          <Loader />
         ) : (
           peliculas.map((pelicula) => (
             <MovieCard
