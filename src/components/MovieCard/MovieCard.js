@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 // import { faPlay as play } from '@fortawesome/free-solid-svg-icons';
 // import { faImdb as IMDB } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import Favs from '../Favs/Favs';
 
 
 class MovieCard extends Component {
@@ -40,6 +41,7 @@ class MovieCard extends Component {
                     {this.state.showMore ? "Ocultar descripción" : "Ver descripción"}
                 </p>
                 {this.state.showMore && <p>{description}</p>}
+                <Favs movie={{ id: movieId, title, poster_path: image }} />
                 <a href="/ver-todas-populares">Ver todas</a>
             </div>
         )
