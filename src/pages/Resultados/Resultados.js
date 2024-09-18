@@ -39,14 +39,14 @@ class Resultados extends Component {
               {peliculas.map((movie) => (
                 <li key={movie.id}>
                   <Link to={`/pelicula/${movie.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
-                    <h3 className="title-font">{movie.title}</h3>
+                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                    <h2 className="title-font">{movie.title}</h2>
                   </Link>
                 </li>
               ))}
             </ul>
           ) : (
-            <p>No se encontraron resultados</p>
+            <h1 className="font">No se encontraron resultados</h1>
           )}
         </div>
       </div>

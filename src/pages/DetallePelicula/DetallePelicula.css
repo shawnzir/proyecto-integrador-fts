@@ -1,6 +1,17 @@
 .main-banner-p{
   height: 100vh;
 }
+
+.main-banner-p body {
+  background: none;
+}
+
+.main-banner-p header {
+  background: transparent;
+  position: absolute;
+  z-index: 300;
+}
+
 .main-banner{
   height: 100%;
   position: relative;
@@ -107,9 +118,12 @@
   .main-banner .wrapper .watch{
     padding: 0.7em 2em;
     font-size: 16px;
-    width: 100%;
+    width: 70%;
   }
   .main-banner .wrapper .fav{
     font-size: 14px;
+  }
+  .main-banner .wrapper .fav{
+    font-size: 50px;
   }
 }

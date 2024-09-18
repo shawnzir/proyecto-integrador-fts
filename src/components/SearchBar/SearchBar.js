@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import "./SearchBar.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch as search } from '@fortawesome/free-solid-svg-icons';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -21,15 +24,17 @@ class SearchBar extends Component {
   render() {
     const { valorBusqueda } = this.state;
     return (
-      <form className="form-home" onSubmit={(e) => e.preventDefault()}>
+      <form className="form-home font" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           onChange={this.controlarCambios}
-          placeholder="Buscar"
+          placeholder="Buscar..."
           value={valorBusqueda}
         />
         <Link to={`/resultados/${valorBusqueda}`}>
-          <button type="submit" onClick={this.onSubmit}>Enter</button>
+          <button 
+            type="submit" onClick={this.onSubmit}> <FontAwesomeIcon icon={search} style={{ color: "#ffffff" }} />
+          </button>
         </Link>
       </form>
     );

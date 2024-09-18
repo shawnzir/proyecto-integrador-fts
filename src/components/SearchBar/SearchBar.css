@@ -1,0 +1,31 @@
+.form-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-home input {
+    width: 95%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: linear-gradient(135deg, rgba(150, 150, 255, 0.3), rgba(200, 150, 255, 0.3), rgba(255, 180, 255, 0.3), rgba(255, 180, 220, 0.3));
+    background-size: 400% 400%;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+.form-home input::placeholder {
+    color: lightgray;
+}
+
+.form-home button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    margin-left: -40px;
+}

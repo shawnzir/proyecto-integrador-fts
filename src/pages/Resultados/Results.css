@@ -28,13 +28,19 @@
     transform: scale(1.05); 
   }
   
-  .title-font {
+  .results h2 {
     font-size: 20px;
     margin: 10px 0 0 0;
     color: white;
     text-align: center;
   }
-  
+
+  .results-page h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+
   .results li {
     margin-bottom: 20px;
   }

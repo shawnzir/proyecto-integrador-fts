@@ -4,7 +4,11 @@
 .favoritos h1{
   color: white;
   font-size: 35px;
+  border-bottom: 1px;
+  border-bottom-color: white;
+  border-bottom-style: solid;
 }
+
 .favoritos h2{
   color: white;
   font-size: 20px;

@@ -21,14 +21,12 @@ export default class Home extends Component {
     return (
       <React.Fragment>
         <Header />
-        <h1>Este es el home!</h1>
-        <section>
         <SearchBar onSearch={this.manejarBusqueda} />
         {this.state.terminoBusqueda && (
           <Peliculas terminoBusqueda={this.state.terminoBusqueda} />
         )}
+        <h1 className='title-font'>Este es el home!</h1>
         <Footer />
-        </section>
       </React.Fragment>
     );
   }

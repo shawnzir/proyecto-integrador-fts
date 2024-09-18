@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as heartEmpty } from '@fortawesome/free-regular-svg-icons'; 
 import { faHeart as heartFull } from '@fortawesome/free-solid-svg-icons'; 
 import { faPlay as play } from '@fortawesome/free-solid-svg-icons';
+import { faImdb as IMDB} from '@fortawesome/free-brands-svg-icons';
 import "./DetallePelicula.css"
 
 class DetallePelicula extends Component {
@@ -110,9 +111,10 @@ class DetallePelicula extends Component {
           <div className='wrapper'>
             <h1 className='title-font'>{datos.original_title}</h1>
             <span className='info'>
-              <p>{datos?datos.origin_country[0]:""}</p>
+              <p>{datos?datos.origin_country[0]:"..."}</p>
               <p>{datos?datos.runtime:"..."}min</p>
               <p>{datos?datos.release_date:"..."}</p>
+              <p><FontAwesomeIcon icon={IMDB} size='lg' style={{color: "#FFD43B",}} /> {datos?datos.vote_average.toFixed(1):"..."} </p>
             </span>
             <button className='watch'><FontAwesomeIcon icon={play} /> Watch Now</button>
             <button className='fav ' onClick={this.handleClick}>
