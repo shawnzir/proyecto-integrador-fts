@@ -39,7 +39,7 @@ class DetallePelicula extends Component {
           let item = JSON.parse(localStorage.getItem("favoritos"))
           if(item){
             let isFav = item.find(elem=>{
-              return elem.id==this.state.datos.id?true:false;
+              return elem.id === this.state.datos.id?true:false;
             })
             if(isFav){
               this.setState({
@@ -70,7 +70,7 @@ class DetallePelicula extends Component {
 
     if(this.state.favs){
       let filtered = item.filter(elem=>{
-         return elem.id != datos.id
+         return elem.id !== datos.id
       })
       localStorage.setItem("favoritos", JSON.stringify(filtered))
       this.setState({

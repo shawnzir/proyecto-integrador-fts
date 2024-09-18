@@ -1,4 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faHeart as heartEmpty } from '@fortawesome/free-regular-svg-icons';
+// import { faHeart as heartFull } from '@fortawesome/free-solid-svg-icons';
+// import { faPlay as play } from '@fortawesome/free-solid-svg-icons';
+// import { faImdb as IMDB } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+
 
 class MovieCard extends Component {
     constructor(props){
@@ -7,13 +14,12 @@ class MovieCard extends Component {
             showMore: false
         }
     }
-
     toggleShowMore = () => {
         if (this.state.showMore === false) {
             this.setState({
                 showMore: true
             })
-        }else {
+        } else {
             this.setState({
                 showMore: false
             })
@@ -21,17 +27,21 @@ class MovieCard extends Component {
     }
 
     render() {
+        const {title, image, description, movieId } = this.props
         return (
-            <article className="movie-container" >
-                <img src={""} alt="" />
-                <h2>{"Nombre o titulo"}</h2>
-                <p onClick={ () => this.toggleShowMore() }>
+            <div className="wrapper" >
+                <div className='movie-card'>
+                <Link to={`/pelicula/${movieId}`}>
+                <img src={`https://image.tmdb.org/t/p/original${image}`} alt="img" />
+                </Link>
+                </div>
+                <h2>{title}</h2>
+                <p onClick={() => this.toggleShowMore()}>
                     {this.state.showMore ? "Ocultar descripción" : "Ver descripción"}
                 </p>
-                {this.state.showMore && <p>{"La descripción"}</p>}
-                <a href={`/pelicula/$:id`}>Ir al detalle</a>
-
-            </article>
+                {this.state.showMore && <p>{description}</p>}
+                <a href="/ver-todas-populares">Ver todas</a>
+            </div>
         )
     }
 }
