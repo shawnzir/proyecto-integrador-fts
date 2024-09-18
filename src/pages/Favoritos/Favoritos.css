@@ -21,22 +21,24 @@
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   height: fit-content;
 }
 .favoritos .wrapper .movie-card{
   width: calc(20% - 15px);
 }
 .favoritos .wrapper .movie-card:hover{
-  outline: white outset 2px;
-  outline-offset: 2px;
+  transform: scale(1.05); 
 }
 .favoritos .wrapper .movie-card a{
   display: block;
 }
 .favoritos .wrapper .movie-card a img{
   width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
 }
+
 @media (max-width: 420px){
   .favoritos{
     padding: 0em 1.5em 1.5em 1.5em;
