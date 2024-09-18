@@ -22,7 +22,7 @@ class PeliculasCartel extends Component {
     fetch(`https://api.themoviedb.org/3/movie/now_playing`, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results.slice(0,5));
+        console.log(data.results.slice(0, 5));
         this.setState({
           peliculas: data.results.slice(0, 5),
           loading: false,
@@ -34,7 +34,7 @@ class PeliculasCartel extends Component {
   render() {
     const { peliculas, loading } = this.state;
     return (
-      <section>
+      <React.Fragment>
         <h2>Películas en cartel</h2>
         {loading ? (
           <p>Cargando...</p>
@@ -49,7 +49,8 @@ class PeliculasCartel extends Component {
             />
           ))
         )}
-      </section>
+        <a href='ver-todas-las-peliculas-en-cartelera'>Ver todas las peliculas en cartelera</a>
+      </React.Fragment>
     );
   }
 }

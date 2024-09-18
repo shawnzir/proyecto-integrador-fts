@@ -56,7 +56,8 @@ class Favs extends Component {
         return (
             <button className='fav-btn' onClick={this.handleClick}>
                 {this.state.favs ? 
-                    <FontAwesomeIcon icon={heartFull} style={{ color: "#550dcf" }} /> : 
+                    <FontAwesomeIcon icon={heartFull} style={{ color: "#550dcf" }} />
+                    : 
                     <FontAwesomeIcon icon={heartEmpty} style={{ color: "#550dcf" }} />
                 }
             </button>

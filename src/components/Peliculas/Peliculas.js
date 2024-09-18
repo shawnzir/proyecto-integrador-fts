@@ -1,4 +1,4 @@
-import React, { Component } from "react"; //Con esto puedo crear un componente de clase
+import { Component } from "react"; //Con esto puedo crear un componente de clase
 
 class Peliculas extends Component {
   componentDidMount() {

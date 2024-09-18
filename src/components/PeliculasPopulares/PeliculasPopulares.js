@@ -52,6 +52,7 @@ class PeliculasPopulares extends Component {
                             />
                         ))
                     )}
+                <a href='ver-todas-las-peliculas-populares'> Ver todas las peliculas populares</a>
             </React.Fragment>
         );
     }

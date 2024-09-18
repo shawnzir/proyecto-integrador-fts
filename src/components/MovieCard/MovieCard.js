@@ -42,7 +42,6 @@ class MovieCard extends Component {
                 </p>
                 {this.state.showMore && <p>{description}</p>}
                 <Favs movie={{ id: movieId, title, poster_path: image }} />
-                <a href="/ver-todas-populares">Ver todas</a>
             </div>
         )
     }
