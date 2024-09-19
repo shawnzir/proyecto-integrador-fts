@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCard from "../MovieCard/MovieCard"
 import Loader from '../Loader/Loader';
+import { Link } from 'react-router-dom';
 
 class PeliculasPopulares extends Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class PeliculasPopulares extends Component {
 
         return (
             <React.Fragment>
+                <div className='movie-cards-container'>
                     {loading ? (
                         <Loader/>
                     ) : (
@@ -51,6 +53,10 @@ class PeliculasPopulares extends Component {
                             />
                         ))
                     )}
+                </div>
+                <div className='link'>
+                    <Link to="/peliculas-populares" > Ver todas las peliculas populares</Link>
+                </div>
             </React.Fragment>
         );
     }

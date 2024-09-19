@@ -2,6 +2,7 @@ import React from 'react';
 import "./Favoritos.css";
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
+import Footer from "../../components/Footer/Footer"
 
 export default function Favoritos() {
   const favoritos = JSON.parse(localStorage.getItem("favoritos"))
@@ -24,6 +25,7 @@ export default function Favoritos() {
           }
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

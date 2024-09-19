@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom"
 
 class PeliculasCartel extends Component {
   constructor(props) {
@@ -36,19 +37,24 @@ class PeliculasCartel extends Component {
     const { peliculas, loading } = this.state;
     return (
       <React.Fragment>
-        {loading ? (
-          <Loader />
-        ) : (
-          peliculas.map((pelicula) => (
-            <MovieCard
-              key={pelicula.id}
-              movieId={pelicula.id}
-              title={pelicula.title}
-              image={pelicula.poster_path}
-              description={pelicula.overview}
-            />
-          ))
-        )}
+        <div className='movie-cards-container'>
+          {loading ? (
+            <Loader />
+          ) : (
+            peliculas.map((pelicula) => (
+              <MovieCard
+                key={pelicula.id}
+                movieId={pelicula.id}
+                title={pelicula.title}
+                image={pelicula.poster_path}
+                description={pelicula.overview}
+              />
+            ))
+          )}
+        </div>
+        <div className='link'>
+            <Link to="/peliculas-cartelera"> Ver todas las peliculas en cartelera </Link>
+        </div>
       </React.Fragment>
     );
   }

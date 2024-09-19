@@ -4,7 +4,9 @@ import Favoritos from "./pages/Favoritos/Favoritos";
 import NotFound from "./pages/NotFound/NotFound";
 import Resultados from "./pages/Resultados/Resultados";
 import DetallePelicula from "./pages/DetallePelicula/DetallePelicula"
-import Peliculas from "./pages/Peliculas/Peliculas";
+import VerTodasPopulares from "./pages/VerTodasPopulares/VerTodasPopulares"
+import VerTodasCartelera from "./pages/VerTodasCartelera/VerTodasCarteleras"
+
 import "./App.css"
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
       <Route path="/favoritos" component={Favoritos} />
       <Route path="/resultados/:valorBusqueda" component={Resultados} />
       <Route path="/pelicula/:id" component={DetallePelicula} />
-      <Route path="/peliculas" component={Peliculas} />
+      <Route path="/peliculas-populares" component={VerTodasPopulares} />
+      <Route path="/peliculas-cartelera" component={VerTodasCartelera} />
       <Route path="*" component={NotFound} />
     </Switch>
   );
