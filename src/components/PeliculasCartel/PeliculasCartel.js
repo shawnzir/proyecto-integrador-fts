@@ -53,7 +53,7 @@ class PeliculasCartel extends Component {
           )}
         </div>
         <div className='link'>
-            <Link to="/peliculas-cartelera"> Ver todas las peliculas en cartelera </Link>
+            <Link to="/peliculas-cartelera" className="font"> Ver todas las peliculas en cartelera </Link>
         </div>
       </React.Fragment>
     );

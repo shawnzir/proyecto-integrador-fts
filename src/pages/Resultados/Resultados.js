@@ -3,7 +3,7 @@ import Peliculas from "../../components/Peliculas/Peliculas";
 import Loader from '../../components/Loader/Loader';
 import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-import './Results.css';
+import './Resultados.css';
 
 class Resultados extends Component {
   constructor(props) {
