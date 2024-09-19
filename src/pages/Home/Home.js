@@ -30,11 +30,11 @@ export default class Home extends Component {
         )}
           <h1 className='title-font'>Películas populares</h1>
         <div className='movies-home'>
-          <PeliculasPopulares />
+          <PeliculasPopulares limit={5}/>
         </div>
           <h1 className='title-font'>Películas en cartelera</h1>
         <div className='movies-home'>
-          <PeliculasCartel />
+          <PeliculasCartel limit={5} />
         </div>
         <Footer />
       </div>

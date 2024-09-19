@@ -9,11 +9,17 @@ class PeliculasPopulares extends Component {
         this.state = {
             peliculas: [],
             loading: true,
-            limit: 5
+            page: 1
         };
     }
 
     componentDidMount() {
+        this.cargarPeliculas()
+    }
+
+    cargarPeliculas = () => {
+        const { page } = this.state
+
         const options = {
             method: 'GET',
             headers: {
@@ -22,30 +28,48 @@ class PeliculasPopulares extends Component {
             },
         };
 
-        fetch(`https://api.themoviedb.org/3/movie/popular`, options)
+        fetch(`https://api.themoviedb.org/3/movie/popular?page=${page}`, options)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.results.slice(0, 5));
-                this.setState({
-
-                    peliculas: data.results.slice(0, 5), // Mostrando solo 5
-                    loading: false,
-                });
+                console.log(data.results);
+                console.log(this.state.page);
+                const limit = this.props.limit || data.results.length // si pongo limit va limit, si no, va todo
+                this.setState((estadoAnterior) => ({
+                    peliculas: [...estadoAnterior.peliculas, ...data.results.slice(0, limit)],
+                    loading: false
+                }));
             })
-            .catch((error) => console.error(error));
+            .catch((error) => {
+                console.error(error)
+                this.setState({loading: false})
+            });
+    }
+
+    handleLoadMore = () => {
+        this.setState(
+            (estadoAnterior) => {
+                const nuevaPagina = estadoAnterior.page + 1
+                return { page: nuevaPagina, loading: true }
+            },
+            () => {
+                console.log("estamos en la pagina" + this.state.page);
+                this.cargarPeliculas();
+            }
+        )
     }
 
     render() {
         const { peliculas, loading } = this.state;
+        const { limit } = this.props
 
         return (
             <React.Fragment>
                 <div className='movie-cards-container'>
                     {loading ? (
-                        <Loader/>
+                        <Loader />
                     ) : (
                         peliculas.map((pelicula) => (
-                            <MovieCard 
+                            <MovieCard
                                 key={pelicula.id}
                                 movieId={pelicula.id}
                                 title={pelicula.title}
@@ -55,9 +79,16 @@ class PeliculasPopulares extends Component {
                         ))
                     )}
                 </div>
-                <div className='link'>
-                    <Link to="/peliculas-populares" className="font"> Ver todas las peliculas populares</Link>
-                </div>
+                {!limit && (
+                    <div className="">
+                        <button onClick={this.handleLoadMore}>Cargar más</button>
+                    </div>
+                )}
+                {limit && (
+                    <div className='link'>
+                        <Link to="/peliculas-populares" className="font"> Ver todas las peliculas populares</Link>
+                    </div>
+                )}
             </React.Fragment>
         );
     }
