@@ -56,7 +56,7 @@ class PeliculasPopulares extends Component {
                     )}
                 </div>
                 <div className='link'>
-                    <Link to="/peliculas-populares" > Ver todas las peliculas populares</Link>
+                    <Link to="/peliculas-populares" className="font"> Ver todas las peliculas populares</Link>
                 </div>
             </React.Fragment>
         );

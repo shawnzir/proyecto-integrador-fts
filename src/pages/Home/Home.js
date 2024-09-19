@@ -32,7 +32,7 @@ export default class Home extends Component {
         <div className='movies-home'>
           <PeliculasPopulares />
         </div>
-          <h1 className='title-font'>Películas en cartel</h1>
+          <h1 className='title-font'>Películas en cartelera</h1>
         <div className='movies-home'>
           <PeliculasCartel />
         </div>
