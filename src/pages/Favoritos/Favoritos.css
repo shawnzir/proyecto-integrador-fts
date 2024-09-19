@@ -9,31 +9,24 @@
   border-bottom-style: solid;
 }
 
-.favoritos h2{
-  color: white;
-  font-size: 20px;
-  border-bottom: 3px solid white;
-  display: inline-block;
-}
 .favoritos .wrapper{
   display: flex;
-  flex: 0 0 calc(20%-15px);
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   height: fit-content;
 }
-.favoritos .wrapper .movie-card{
-  width: calc(20% - 15px);
+.favoritos .wrapper .movie-card-favs{
+  width: calc(25% - 15px);
 }
-.favoritos .wrapper .movie-card:hover{
+.favoritos .wrapper .movie-card-favs:hover{
   transform: scale(1.05); 
 }
-.favoritos .wrapper .movie-card a{
+.favoritos .wrapper .movie-card-favs a{
   display: block;
 }
-.favoritos .wrapper .movie-card a img{
+.favoritos .wrapper .movie-card-favs a img{
   width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;

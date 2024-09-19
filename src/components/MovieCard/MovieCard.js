@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHeart as heartEmpty } from '@fortawesome/free-regular-svg-icons';
-// import { faHeart as heartFull } from '@fortawesome/free-solid-svg-icons';
-// import { faPlay as play } from '@fortawesome/free-solid-svg-icons';
-// import { faImdb as IMDB } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import Favs from '../Favs/Favs';
-
+import './MovieCard.css';
 
 class MovieCard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             showMore: false
@@ -28,20 +23,20 @@ class MovieCard extends Component {
     }
 
     render() {
-        const {title, image, description, movieId } = this.props
+        const { title, image, description, movieId } = this.props
         return (
-            <div className="wrapper" >
-                <div className='movie-card'>
+            <div className='movie-card'>
                 <Link to={`/pelicula/${movieId}`}>
-                <img src={`https://image.tmdb.org/t/p/original${image}`} alt="img" />
+                    <img src={`https://image.tmdb.org/t/p/w200${image}`} alt="img" />
                 </Link>
-                </div>
-                <h2>{title}</h2>
-                <p onClick={() => this.toggleShowMore()}>
-                    {this.state.showMore ? "Ocultar descripción" : "Ver descripción"}
-                </p>
-                {this.state.showMore && <p>{description}</p>}
-                <Favs movie={{ id: movieId, title, poster_path: image }} />
+                <h2 className='title-font'>{title}</h2>
+                <span>
+                    <p onClick={() => this.toggleShowMore()}>
+                        {this.state.showMore ? "Ocultar descripción" : "Ver descripción"}
+                    </p>
+                    {this.state.showMore && <p>{description}</p>}
+                    <Favs movie={{ id: movieId, title, poster_path: image }} />
+                </span>
             </div>
         )
     }

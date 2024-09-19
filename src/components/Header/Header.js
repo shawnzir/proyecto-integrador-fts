@@ -5,7 +5,7 @@ import "./Header.css"
 function Header() {
     return (
         <header>
-            <MenuDeNav home="Home" favoritos="Favoritos" vertodas="Ver todo"/>
+            <MenuDeNav home="Inicio" favoritos="Favoritos" vertodas="Ver todo"/>
         </header>
     )
 }

@@ -3,10 +3,9 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Peliculas from "../../components/Peliculas/Peliculas";
-// import MovieCard from '../../components/MovieCard/MovieCard';
 import PeliculasPopulares from '../../components/PeliculasPopulares/PeliculasPopulares';
 import PeliculasCartel from '../../components/PeliculasCartel/PeliculasCartel';
-import "../Favoritos/Favoritos.css"
+import "./Home.css"
 
 export default class Home extends Component {
   constructor(props) {
@@ -23,22 +22,22 @@ export default class Home extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className='home'>
         <Header />
         <SearchBar onSearch={this.manejarBusqueda} />
         {this.state.terminoBusqueda && (
           <Peliculas terminoBusqueda={this.state.terminoBusqueda} />
         )}
-        <div className='color-home'>
-          <div className='favoritos'>
-            <PeliculasPopulares />
-          </div>
-          <div className='favoritos'>
-            <PeliculasCartel />
-          </div>
+          <h1 className='title-font'>Películas populares</h1>
+        <div className='movies-home'>
+          <PeliculasPopulares />
+        </div>
+          <h1 className='title-font'>Películas en cartel</h1>
+        <div className='movies-home'>
+          <PeliculasCartel />
         </div>
         <Footer />
-      </React.Fragment>
+      </div>
     );
   }
 }

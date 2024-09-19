@@ -116,7 +116,7 @@ class DetallePelicula extends Component {
               <p>{datos?datos.release_date:"..."}</p>
               <p><FontAwesomeIcon icon={IMDB} size='lg' style={{color: "#FFD43B",}} /> {datos?datos.vote_average.toFixed(1):"..."} </p>
             </span>
-            <button className='watch'><FontAwesomeIcon icon={play} /> Watch Now</button>
+            <button className='watch'><FontAwesomeIcon icon={play} /> Ver ahora </button>
             <button className='fav ' onClick={this.handleClick}>
               {this.state.favs ?
                 <FontAwesomeIcon icon={heartFull} style={{ color: "#550dcf"}}/>

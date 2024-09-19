@@ -36,7 +36,6 @@ class PeliculasCartel extends Component {
     const { peliculas, loading } = this.state;
     return (
       <React.Fragment>
-        <h2>Películas en cartel</h2>
         {loading ? (
           <Loader />
         ) : (
@@ -50,7 +49,6 @@ class PeliculasCartel extends Component {
             />
           ))
         )}
-        <a href='ver-todas-las-peliculas-en-cartelera'>Ver todas las peliculas en cartelera</a>
       </React.Fragment>
     );
   }

@@ -38,7 +38,6 @@ class PeliculasPopulares extends Component {
 
         return (
             <React.Fragment>
-                <h2 className='title-font'>Películas más populares</h2>
                     {loading ? (
                         <Loader/>
                     ) : (
@@ -52,7 +51,6 @@ class PeliculasPopulares extends Component {
                             />
                         ))
                     )}
-                <a href='ver-todas-las-peliculas-populares'> Ver todas las peliculas populares</a>
             </React.Fragment>
         );
     }

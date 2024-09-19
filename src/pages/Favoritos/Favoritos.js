@@ -11,9 +11,9 @@ export default function Favoritos() {
       <div className='favoritos'>
         <h1 className='title-font'>Mi lista</h1>
         <div className='wrapper'>
-          {favoritos?
-            favoritos.map(item=>(
-              <div className='movie-card' key={item.id}>
+          {favoritos ?
+            favoritos.map(item => (
+              <div className='movie-card-favs' key={item.id}>
                 <Link to={`/pelicula/${item.id}`}>
                   <img src={`https://image.tmdb.org/t/p/original${item.image}`} alt="" />
                 </Link>

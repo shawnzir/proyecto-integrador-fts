@@ -5,8 +5,6 @@
     font-family: "Bebas Neue", sans-serif;
     font-weight: 275;
     font-style: normal;
-    display: flex;
-    justify-content: center;
 }
 
 .color-home {
@@ -44,6 +42,7 @@ a:hover, a:active {
 }
 
 body {
+  overflow: none;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
