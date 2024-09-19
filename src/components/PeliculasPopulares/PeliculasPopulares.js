@@ -9,6 +9,7 @@ class PeliculasPopulares extends Component {
         this.state = {
             peliculas: [],
             loading: true,
+            limit: 5
         };
     }
 

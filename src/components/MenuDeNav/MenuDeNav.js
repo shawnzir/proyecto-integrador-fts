@@ -9,7 +9,8 @@ function Menu (props) {
             <ul className="menu title-font">
                 <li> <a href="/"> {props.home} </a> </li>
                 <li> <a href="/favoritos"> {props.favoritos} </a> </li>
-                <li> <a href="/peliculas"> {props.vertodas} </a> </li>
+                <li> <a href="/peliculas-populares"> {props.populares} </a> </li>
+                <li> <a href="/peliculas-cartelera"> {props.cartelera} </a> </li>
             </ul>
         </nav>
     )
