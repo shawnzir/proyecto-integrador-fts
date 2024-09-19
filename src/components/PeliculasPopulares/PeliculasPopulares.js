@@ -41,7 +41,7 @@ class PeliculasPopulares extends Component {
             })
             .catch((error) => {
                 console.error(error)
-                this.setState({loading: false})
+                this.setState({ loading: false })
             });
     }
 
@@ -60,7 +60,11 @@ class PeliculasPopulares extends Component {
 
     render() {
         const { peliculas, loading } = this.state;
-        const { limit } = this.props
+        const { limit, filtro } = this.props
+
+        const peliculasFiltradas = peliculas.filter((pelicula) =>
+            filtro && pelicula.title.toLowerCase().includes(filtro.toLowerCase())
+        );
 
         return (
             <React.Fragment>
@@ -68,20 +72,31 @@ class PeliculasPopulares extends Component {
                     {loading ? (
                         <Loader />
                     ) : (
-                        peliculas.map((pelicula) => (
-                            <MovieCard
-                                key={pelicula.id}
-                                movieId={pelicula.id}
-                                title={pelicula.title}
-                                image={pelicula.poster_path}
-                                description={pelicula.overview}
-                            />
-                        ))
+                        filtro ? (
+                            peliculasFiltradas.map((pelicula) => (
+                                <MovieCard
+                                    key={pelicula.id}
+                                    movieId={pelicula.id}
+                                    title={pelicula.title}
+                                    image={pelicula.poster_path}
+                                    description={pelicula.overview}
+                                />
+                            ))
+                        ) : (
+                            peliculas.map((pelicula) =>
+                                <MovieCard
+                                    key={pelicula.id}
+                                    movieId={pelicula.id}
+                                    title={pelicula.title}
+                                    image={pelicula.poster_path}
+                                    description={pelicula.overview}
+                                />
+                            ))
                     )}
                 </div>
                 {!limit && (
-                    <div className="">
-                        <button onClick={this.handleLoadMore}>Cargar más</button>
+                    <div className="load-more-container">
+                        <button onClick={this.handleLoadMore} className='load-more title-font'>Cargar más</button>
                     </div>
                 )}
                 {limit && (

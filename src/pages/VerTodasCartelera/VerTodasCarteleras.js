@@ -1,19 +1,45 @@
-import React from "react";
+import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import PeliculasCartel from "../../components/PeliculasCartel/PeliculasCartel";
+import "./VerTodasCartelera.css";
 
-function VerTodasCartelera() {
-    return (
-        <React.Fragment>
-            <Header />
-            <div>
-                <h1 className="title-font">Ver todas las peliculas en cartelera</h1>
-                <PeliculasCartel/>
-            </div>
-            <Footer />
-        </React.Fragment >
-    );
+class VerTodasCartelera extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            filtro: "", 
+        };
+    }
+
+    filtroUpdate = (e) => {
+        this.setState({ filtro: e.target.value }); 
+    };
+
+    render() {
+        const { filtro } = this.state; 
+
+        return (
+            <React.Fragment>
+                <Header />
+
+                <div className="form-home">
+                    <input
+                        type="text"
+                        placeholder="Filtrar..."
+                        value={filtro}
+                        onChange={this.filtroUpdate}
+                    />
+                </div>
+
+                <div className="movie-container">
+                    <PeliculasCartel filtro={filtro} />
+                </div>
+
+                <Footer />
+            </React.Fragment>
+        );
+    }
 }
 
-export default VerTodasCartelera
+export default VerTodasCartelera;

@@ -18,7 +18,7 @@ class PeliculasCartel extends Component {
   }
 
   cargarPeliculas = () => {
-    const {page} = this.state
+    const { page } = this.state
     const options = {
       method: 'GET',
       headers: {
@@ -44,7 +44,7 @@ class PeliculasCartel extends Component {
     this.setState(
       (estadoAnterior) => {
         const nuevaPagina = estadoAnterior.page + 1
-        return { page: nuevaPagina, loading: true}
+        return { page: nuevaPagina, loading: true }
       },
       () => {
         this.cargarPeliculas();
@@ -54,27 +54,43 @@ class PeliculasCartel extends Component {
 
   render() {
     const { peliculas, loading } = this.state;
-    const { limit } = this.props
+    const { limit, filtro } = this.props
+
+    const peliculasFiltradas = peliculas.filter((pelicula) =>
+      filtro && pelicula.title.toLowerCase().includes(filtro.toLowerCase())
+    );
+
     return (
       <React.Fragment>
         <div className='movie-cards-container'>
           {loading ? (
             <Loader />
           ) : (
-            peliculas.map((pelicula) => (
-              <MovieCard
-                key={pelicula.id}
-                movieId={pelicula.id}
-                title={pelicula.title}
-                image={pelicula.poster_path}
-                description={pelicula.overview}
-              />
-            ))
+            filtro ? (
+              peliculasFiltradas.map((pelicula) => (
+                <MovieCard
+                  key={pelicula.id}
+                  movieId={pelicula.id}
+                  title={pelicula.title}
+                  image={pelicula.poster_path}
+                  description={pelicula.overview}
+                />
+              ))
+            ) : (
+              peliculas.map((pelicula) =>
+                <MovieCard
+                  key={pelicula.id}
+                  movieId={pelicula.id}
+                  title={pelicula.title}
+                  image={pelicula.poster_path}
+                  description={pelicula.overview}
+                />
+              ))
           )}
         </div>
         {!limit && (
-          <div className=''>
-            <button onClick={this.handleLoadMore}> Cargar Más </button>
+          <div className='load-more-container'>
+            <button onClick={this.handleLoadMore} className='load-more title-font'> Cargar Más </button>
           </div>
         )}
         {limit && (
