@@ -9,10 +9,16 @@ class PeliculasCartel extends Component {
     this.state = {
       peliculas: [],
       loading: true,
+      page: 1
     };
   }
 
   componentDidMount() {
+    this.cargarPeliculas();
+  }
+
+  cargarPeliculas = () => {
+    const {page} = this.state
     const options = {
       method: 'GET',
       headers: {
@@ -21,20 +27,34 @@ class PeliculasCartel extends Component {
       },
     };
 
-    fetch(`https://api.themoviedb.org/3/movie/now_playing`, options)
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?page=${page}`, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results.slice(0, 5));
-        this.setState({
-          peliculas: data.results.slice(0, 5),
-          loading: false,
-        });
+        console.log(data.results);
+        const limit = this.props.limit || data.results.length
+        this.setState((estadoAnterior) => ({
+          peliculas: [...estadoAnterior.peliculas, ...data.results.slice(0, limit)],
+          loading: false
+        }));
       })
       .catch((error) => console.error(error));
   }
 
+  handleLoadMore = () => {
+    this.setState(
+      (estadoAnterior) => {
+        const nuevaPagina = estadoAnterior.page + 1
+        return { page: nuevaPagina, loading: true}
+      },
+      () => {
+        this.cargarPeliculas();
+      }
+    )
+  }
+
   render() {
     const { peliculas, loading } = this.state;
+    const { limit } = this.props
     return (
       <React.Fragment>
         <div className='movie-cards-container'>
@@ -52,9 +72,16 @@ class PeliculasCartel extends Component {
             ))
           )}
         </div>
-        <div className='link'>
+        {!limit && (
+          <div className=''>
+            <button onClick={this.handleLoadMore}> Cargar Más </button>
+          </div>
+        )}
+        {limit && (
+          <div className='link'>
             <Link to="/peliculas-cartelera" className="font"> Ver todas las peliculas en cartelera </Link>
-        </div>
+          </div>
+        )}
       </React.Fragment>
     );
   }
