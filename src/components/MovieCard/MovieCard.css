@@ -1,7 +1,8 @@
 .movie-card {
     display: flex;
     flex-direction: column;
-    background-color: #121212; 
+    background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
+    background-size: 1000% 1000%;
     color: white;
     width: 200px; 
     border-radius: 10px; 

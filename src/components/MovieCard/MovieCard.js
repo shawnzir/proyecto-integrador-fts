@@ -34,9 +34,9 @@ class MovieCard extends Component {
                     <p onClick={() => this.toggleShowMore()}>
                         {this.state.showMore ? "Ocultar descripción" : "Ver descripción"}
                     </p>
-                    {this.state.showMore && <p>{description}</p>}
                     <Favs movie={{ id: movieId, title, poster_path: image }} />
                 </span>
+                {this.state.showMore && <p>{description}</p>}
             </div>
         )
     }

@@ -47,7 +47,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #0b0d26, #550dcf, #b800e1, #ff00a9);
-  background-size: 400% 400%;
+  background-size: 300% 100%;
   font-family: "Oswald", system-ui;
   font-optical-sizing: auto;
   font-weight: 325;
