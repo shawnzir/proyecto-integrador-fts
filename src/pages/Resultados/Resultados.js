@@ -19,7 +19,6 @@ class Resultados extends Component {
   };
 
   render() {
-    const { peliculas, loading} = this.state;
     const { valorBusqueda } = this.props.match.params;
 
     return (
@@ -32,15 +31,14 @@ class Resultados extends Component {
         />
 
         <div className="results-page">
-          {loading ? (
+          {this.state.loading ? (
             <Loader />
-          ) : peliculas.length > 0 ? (
+          ) : this.state.peliculas.length > 0 ? (
             <ul className="results">
-              {peliculas.map((movie) => (
+              {this.state.peliculas.map((movie) => (
                 <li key={movie.id}>
                   <Link to={`/pelicula/${movie.id}`}>
                     <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
-                    <h2 className="title-font">{movie.title}</h2>
                   </Link>
                 </li>
               ))}
