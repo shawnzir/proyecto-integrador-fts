@@ -18,7 +18,7 @@ class PeliculasPopulares extends Component {
     }
 
     cargarPeliculas = () => {
-        const { page } = this.state
+        const page = this.state.page
 
         const options = {
             method: 'GET',
@@ -34,33 +34,32 @@ class PeliculasPopulares extends Component {
                 console.log(data.results);
                 console.log(this.state.page);
                 const limit = this.props.limit || data.results.length // si pongo limit va limit, si no, va todo
-                this.setState((estadoAnterior) => ({
-                    peliculas: [...estadoAnterior.peliculas, ...data.results.slice(0, limit)],
+                this.setState({
+                    peliculas: this.state.peliculas.concat(data.results.slice(0, limit)),
                     loading: false
-                }));
+                });
             })
-            .catch((error) => {
-                console.error(error)
-                this.setState({ loading: false })
-            });
+            .catch((error) => console.error(error));
     }
 
     handleLoadMore = () => {
         this.setState(
-            (estadoAnterior) => {
-                const nuevaPagina = estadoAnterior.page + 1
-                return { page: nuevaPagina, loading: true }
+            {
+                page: this.state.page + 1,
+                loading: true
             },
             () => {
-                console.log("estamos en la pagina" + this.state.page);
+                console.log("estamos en la pagina " + this.state.page);
                 this.cargarPeliculas();
             }
         )
     }
 
     render() {
-        const { peliculas, loading } = this.state;
-        const { limit, filtro } = this.props
+        const peliculas = this.state.peliculas
+        const loading = this.state.loading
+        const limit = this.props.limit
+        const filtro = this.props.filtro
 
         const peliculasFiltradas = peliculas.filter((pelicula) =>
             filtro && pelicula.title.toLowerCase().includes(filtro.toLowerCase())

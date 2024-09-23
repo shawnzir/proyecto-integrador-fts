@@ -17,12 +17,12 @@ class SearchBar extends Component {
   };
 
   onSubmit = () => {
-    const { valorBusqueda } = this.state;
+    const  valorBusqueda  = this.state.valorBusqueda;
     this.props.onSearch(valorBusqueda);
   };
 
   render() {
-    const { valorBusqueda } = this.state;
+    const  valorBusqueda  = this.state.valorBusqueda;
     return (
       <form className="form-home font" onSubmit={(e) => e.preventDefault()}>
         <input

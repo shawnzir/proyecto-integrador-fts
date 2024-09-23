@@ -23,7 +23,10 @@ class MovieCard extends Component {
     }
 
     render() {
-        const { title, image, description, movieId } = this.props
+        const title = this.props.title
+        const image = this.props.image
+        const description = this.props.description
+        const movieId = this.props.movieId
         return (
             <div className='movie-card'>
                 <Link to={`/pelicula/${movieId}`}>

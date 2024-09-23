@@ -16,7 +16,7 @@ class VerTodasPopulares extends Component {
     };
 
     render() {
-        const { filtro } = this.state; 
+        const  filtro  = this.state.filtro; 
 
         return (
             <React.Fragment>

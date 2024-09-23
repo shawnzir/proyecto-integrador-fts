@@ -18,7 +18,7 @@ class PeliculasCartel extends Component {
   }
 
   cargarPeliculas = () => {
-    const { page } = this.state
+    const page = this.state.page
     const options = {
       method: 'GET',
       headers: {
@@ -32,29 +32,33 @@ class PeliculasCartel extends Component {
       .then((data) => {
         console.log(data.results);
         const limit = this.props.limit || data.results.length
-        this.setState((estadoAnterior) => ({
-          peliculas: [...estadoAnterior.peliculas, ...data.results.slice(0, limit)],
+        this.setState({
+          peliculas: this.state.peliculas.concat(data.results.slice(0, limit)),
           loading: false
-        }));
+        });
       })
       .catch((error) => console.error(error));
   }
 
   handleLoadMore = () => {
     this.setState(
-      (estadoAnterior) => {
-        const nuevaPagina = estadoAnterior.page + 1
-        return { page: nuevaPagina, loading: true }
+      {
+        page: this.state.page + 1,
+        loading: false
       },
       () => {
+        console.log("estamos en la pagina " + this.state.page);
+        
         this.cargarPeliculas();
       }
     )
   }
 
   render() {
-    const { peliculas, loading } = this.state;
-    const { limit, filtro } = this.props
+    const peliculas = this.state.peliculas
+    const loading = this.state.loading
+    const limit = this.props.limit
+    const filtro = this.props.filtro
 
     const peliculasFiltradas = peliculas.filter((pelicula) =>
       filtro && pelicula.title.toLowerCase().includes(filtro.toLowerCase())

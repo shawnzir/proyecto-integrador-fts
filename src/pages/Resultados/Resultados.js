@@ -19,7 +19,7 @@ class Resultados extends Component {
   };
 
   render() {
-    const { valorBusqueda } = this.props.match.params;
+    const  valorBusqueda  = this.props.match.params.valorBusqueda;
 
     return (
       <div>
