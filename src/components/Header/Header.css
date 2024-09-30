@@ -48,3 +48,15 @@ header {
     max-width: 150px;
     max-height: 9vh;
   }
+@media (max-width:430px){
+  header{
+    margin: 0px;
+    justify-content: end;
+  }
+  .menu li{
+    margin: 0px 15px;
+  }
+  .menu a{
+    font-size: 18px;
+  }
+}

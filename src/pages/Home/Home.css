@@ -33,3 +33,15 @@
 .link:hover {
     color: lightgray;
 }
+@media (max-width: 430px){
+    .movie-cards-container{
+        gap: 0px;
+    }
+    .home h1{
+        margin: 30px 20px;
+    }
+    .movies-home{
+        margin: 0px;
+        padding: 0px;
+    }
+}

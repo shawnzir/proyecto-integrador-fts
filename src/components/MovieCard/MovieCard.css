@@ -45,4 +45,11 @@
     justify-content: left;
     font-size: 30px;
 }
-
+@media(max-width: 430px){
+    .movie-card{
+        width: calc(50% - 20px);
+    }
+    .movie-card span p{
+        font-size: 12px;
+    }
+}
